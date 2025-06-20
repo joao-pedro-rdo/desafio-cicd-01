@@ -1,0 +1,17 @@
+name: Testes
+on: 
+    workflow_call:
+jobs:
+    teste-unidaade:
+        name: Testes de Unidade
+        runs-on: ubuntu-latest
+        steps:
+            - name: obtendo cod projeto
+              uses: actions/checkout@v4
+            - name: Setuo dotnet
+              uses: actions/setup-dotnet@v4
+              with:
+                dotnet-vevrsion: "8.0.300"
+            - name: Teste de unidade
+              working-directory: ./src
+              run: dotnet test ./Review-Filmes.Test.Unit/Review-Filmes.Test.Unit.csproj
