@@ -1,0 +1,5 @@
+name: Pipeline CI/CD
+run-name: Pipeline Ci/CD executada por ${{ github.actor }} em ${{ github.run_number }}
+on: 
+    workflow_dispatch
+    
